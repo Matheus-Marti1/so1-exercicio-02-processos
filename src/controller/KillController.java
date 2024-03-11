@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import javax.swing.JOptionPane;
-
 public class KillController {
 
 	public KillController() {
@@ -69,9 +67,8 @@ public class KillController {
 				buffer.append(" ");
 				buffer.append(pid);
 				Runtime.getRuntime().exec(buffer.toString());
-				JOptionPane.showMessageDialog(null, "Processo com PID " + pid + " finalizado com sucesso.");
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Processo não encontrado.");
+				e.printStackTrace();
 			}
 		} else if (os.contains("Linux")) {
 			String cmdPid = "kill -9";
@@ -81,9 +78,8 @@ public class KillController {
 				buffer.append(" ");
 				buffer.append(pid);
 				Runtime.getRuntime().exec(buffer.toString());
-				JOptionPane.showMessageDialog(null, "Processo com PID " + pid + " finalizado com sucesso.");
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Processo não encontrado.");
+				e.printStackTrace();
 			}
 		}
 	}
@@ -99,9 +95,8 @@ public class KillController {
 				buffer.append(" ");
 				buffer.append(nomeProcesso);
 				Runtime.getRuntime().exec(buffer.toString());
-				JOptionPane.showMessageDialog(null, "Processo " + nomeProcesso + " finalizado com sucesso.");
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Processo não encontrado.");
+				e.printStackTrace();
 			}
 		} else if (os.contains("Linux")) {
 			String cmdPid = "pkill -f";
@@ -111,9 +106,8 @@ public class KillController {
 				buffer.append(" ");
 				buffer.append(nomeProcesso);
 				Runtime.getRuntime().exec(buffer.toString());
-				JOptionPane.showMessageDialog(null, "Processo " + nomeProcesso + " finalizado com sucesso.");
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Processo não encontrado.");
+				e.printStackTrace();
 			}
 		}
 	}
