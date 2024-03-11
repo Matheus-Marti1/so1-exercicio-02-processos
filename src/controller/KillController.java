@@ -104,7 +104,7 @@ public class KillController {
 				JOptionPane.showMessageDialog(null, "Processo não encontrado.");
 			}
 		} else if (os.contains("Linux")) {
-			String cmdPid = "kill -9";
+			String cmdPid = "pkill -f";
 			StringBuffer buffer = new StringBuffer();
 			try {
 				buffer.append(cmdPid);
